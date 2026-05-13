@@ -11,7 +11,7 @@ load_dotenv()
 
 class OutputFormat(BaseModel):
     type: str = Field(default="text", description="Sempre deve ter o valor 'text'")
-    text: str = Field(description="Sua resposta contendo o conteúdo em Markdown válido")
+    text: str = Field(description="Sua resposta contendo o conteúdo em Markdown válido - obrigatório ter markdown")
     source: str = Field(description="Identificar o nome ou título do documento")
     suggestions: list[str] = Field(description="Exatamente 3 perguntas de acompanhamento relevantes")
 
@@ -51,10 +51,14 @@ model = ChatOpenAI(model="gpt-4.1-mini", temperature=0)
 structured_model = model.with_structured_output(OutputFormat)
 
 prompt = ChatPromptTemplate.from_messages([
-    ("system", """Você é um analista. 
-    O documento fornecido foi extraído com tabelas em formato Markdown. 
-    Cruze os dados corretamente, respeitando linhas e colunas."""),
-    ("user", "Documento:\n{contexto}\n\nComando: {comando}")
+    ("system", """Você é um analista de BI especialista.
+    Analise o documento PDF fornecido e responda à pergunta do usuário.
+    
+    REGRAS CRÍTICAS:
+    1. O campo 'text' DEVE usar Markdown rico (## para títulos, bullet points para listas, **negrito** para termos chave).
+    2. O campo 'suggestions' deve conter exatamente 3 perguntas complementares que ajudem o analista a aprofundar a análise baseada no contexto.
+    3. Identifique o nome do documento para o campo 'source'."""),
+    ("user", "QuConteúdo:\n{contexto}\n\nPergunta: {comando}")
 ])
 
 chain = prompt | structured_model

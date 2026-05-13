@@ -67,3 +67,13 @@ Dada as comparações. optei por escolher o gpt-4.1-mini, pois foi muito superio
 
 
 # Uso do script
+#### Requisito principal: python 3.14
++ abra a sua ide e rode o comando *git clone https://github.com/alanlopesdev/desafio-active-bi.git* através do terminal.
++ entre na pasta do projeto com cd desafio-active-bi
++ crie um ambiente virtual python para isolar as dependencias com python -m venv .venv
++ ative o ambiente virtual com .\.venv\Scripts\Activate.ps1
++ instale as dependências com pip install -r requirements.txt
++ crie um arquivo .env e passe sua api da open ai no seguinte formato OPENAI_APY_KEY=codigo-api
++ coloque o pdf para análise na pasta pdfs
++ no arquivo main.py, navegue até a linha 46, terá algo como file_path = "pdfs/nome-arquivo.pdf", coloque o nome do seu arquivo pdf no lugar de nome-arquivo
++ rode o script, passe a sua pergunta no terminal e terá a resposta da llm.
