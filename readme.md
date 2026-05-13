@@ -30,7 +30,7 @@
 
 pergunta:
 
-"Sabendo que o Fator de Utilização Total (FUT) do parque de refino atingiu 95% , como a sazonalidade do mercado interno e as ações de terceiros explicam matematicamente e operacionalmente a queda expressiva de 67,3% nas importações de diesel entre o 4T25 e o 1T26?" + pdf.
+"Sabendo que o Fator de Utilização Total (FUT) do parque de refino atingiu 95% , como a sazonalidade do mercado interno e as ações de terceiros explicam matematicamente e operacionalmente a queda expressiva de 67,3% nas importações de diesel entre o 4T25 e o 1T26?" + pdf petrobras.
 
 gpt-4.1-mini:
 
