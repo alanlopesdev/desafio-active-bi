@@ -67,7 +67,7 @@ Dada as comparações. optei por escolher o gpt-4.1-mini, pois foi muito superio
 
 
 # Uso do script
-#### Requisito principal: python 3.14
+#### Requisito principal: python 3.14 e git
 + abra a sua ide e rode o comando *git clone https://github.com/alanlopesdev/desafio-active-bi.git* através do terminal.
 + entre na pasta do projeto com cd desafio-active-bi
 + crie um ambiente virtual python para isolar as dependencias com python -m venv .venv
